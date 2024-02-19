@@ -28,6 +28,12 @@ class ViewController: UIViewController {
                            "mobile": txtMobile.text]
         DatabaseHelper.shareInstance.save(object: dictionary as![String:String])
     }
-    
+    @IBAction func buttonShowClick(_ sender: Any) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let detailsViewController = storyBoard.instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
+        self.present(detailsViewController, animated:true, completion:nil)
+        
+        
+    }
 }
 
